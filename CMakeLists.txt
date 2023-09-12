@@ -4,7 +4,8 @@ cmake_minimum_required(VERSION 3.18)
 # set CMake project name
 project(TKTABLE)
 
-find_package(TCL)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMake")
+find_package(TCL REQUIRED)
 
 if (WIN32 OR "${TK_SYSTEM_GRAPHICS}" MATCHES "aqua")
   include_directories("${TK_SOURCE_DIR}/xlib/X11")
